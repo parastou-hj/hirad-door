@@ -1,3 +1,74 @@
+  
+ $(document).ready(function() {
+    const headerMoving=()=>{
+     let lastScrollTop = 0;
+     let isHeaderVisible = true;
+     const $header = $('header');
+     const $mainHeader = $('.header-container');
+     const $downHeader = $('.header-down');
+     const $headerRow = $('.header-top');
+     const rowHeight = $headerRow.outerHeight();
+     const downHeaderHeight = $downHeader.outerHeight();
+     const mainHeaderHeight = $mainHeader.outerHeight();
+ 
+    
+     const totalHeight = rowHeight + downHeaderHeight ;
+    //  $mainHeader.css('height', totalHeight);
+    //  $('body').css('padding-top', totalHeight);
+     if (window.innerWidth > 990) {
+      
+         $(window).scroll(function() {
+         const currentScroll = $(this).scrollTop();
+             if (currentScroll > 100) {
+                 if (currentScroll > lastScrollTop && isHeaderVisible) {
+                     $mainHeader.addClass('header-hidden');
+                     $downHeader.addClass('header-up-lg');
+                    //  $header.height(downHeaderHeight);
+                     isHeaderVisible = false;
+                     
+                 }
+                
+             } else   {
+                 $mainHeader.removeClass('header-hidden');
+                 $downHeader.removeClass('header-up-lg');
+                 isHeaderVisible = true;
+             }
+             
+             lastScrollTop = currentScroll;
+         });
+        
+     }else if( window,innerWidth <= 992){
+         $(window).scroll(function() {
+             const currentScroll = $(this).scrollTop();
+             if (currentScroll > 100) {
+                 if (currentScroll > lastScrollTop && isHeaderVisible) {
+                     $downHeader.addClass('header-hidden');
+                    //  $mainHeader.css('height', rowHeight);
+                    //  $('body').css('padding-top', rowHeight);
+                     isHeaderVisible = false;
+                 }
+                
+             } else {
+                 $downHeader.removeClass('header-hidden');
+                //  $mainHeader.css('height', totalHeight);
+                //  $('body').css('padding-top', totalHeight);
+ 
+                 isHeaderVisible = true;
+             }
+             
+             lastScrollTop = currentScroll;
+         });
+         
+         let resizeTimer;
+         
+     }
+    }
+    headerMoving();
+    $(window).resize(headerMoving);
+     
+ });
+
+  
   $(document).ready(function(){
             $(".gallery-carousel").owlCarousel({
                 loop: true,
@@ -26,7 +97,7 @@
             });
         });
          $(document).ready(function(){
-        $(".baner-two").owlCarousel({
+        $(".baner").owlCarousel({
             items: 1,
             loop: true,
             autoplay: true,
@@ -37,3 +108,27 @@
             dots: false
         });
     });
+
+      $(document).ready(function(){
+            $(".brands").owlCarousel({
+                rtl:true,
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+        });
