@@ -70,14 +70,14 @@
 
   
   $(document).ready(function(){
-            $(".gallery-carousel").owlCarousel({
+            $(".product-carousel").owlCarousel({
                 loop: true,
                
                 rtl: true,
                 nav: true,
                 dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
+                // autoplay: true,
+                // autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 responsive:{
                     0:{
@@ -128,7 +128,39 @@
                     },
                     1000:{
                         items:5
+                    },
+                       1200:{
+                        items:8
                     }
+                    
+                }
+            });
+        });
+
+
+
+     $(document).ready(function(){
+            $(".blog-carousel").owlCarousel({
+                rtl:true,
+                loop: true,
+                // margin: 10,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                   
+                       1200:{
+                        items:3
+                    }
+                    
                 }
             });
         });

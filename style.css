@@ -1,17 +1,54 @@
 :root{
-    --gray:hsl(0deg 0% 94.9%);
-    --red: hsl(0deg 93.44% 35.88%);
-    --border:hsl(0, 0%, 81%);
-    --title: hsl(0deg 0% 27.84%);
+            --primary-color:hsl(359.7deg 90.78% 42.55%);
+            --black-back:#2c2c2c;
+            --accent-color: #898a8d;
+            
+        }
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      
+
+        a{
+            text-decoration: none;
+        }
+        ul{
+            padding-left:0px !important;
+        }
+        @font-face {
+    font-family: IRANYekanWebLight;
+    src: url(./font/IRANYekanWebLight.ttf);
   }
-  body {
-    margin: 0;
-    padding: 0;
-    direction: rtl;
-    font-size: 15px;
-    font-family: IRANYekanWebRegular,  IRANYekanWebBold, IRANYekanWebExtraBlack,  IRANYekanWebExtraBold, IRANYekanWebMedium ;
-    /* padding-top: 140px; */
+  @font-face {
+    font-family: IRANYekanWebBold;
+    src: url(./font/IRANYekanWebBold.ttf);
   }
+  @font-face {
+    font-family: IRANYekanWebExtraBlack;
+    src: url(./font/IRANYekanWebExtraBlack.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebExtraBold;
+    src: url(./font/IRANYekanWebExtraBold.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebMedium;
+    src: url(./font/IRANYekanWebMedium.ttf);
+  }
+  @font-face {
+   font-family: iranyekanwebregularfanum;
+    src: url(./font/iranyekanwebregularfanum.ttf);
+  }
+ 
+        
+        body {
+            font-family: iranyekanwebregularfanum;
+            direction: rtl;
+            font-size: 15px;
+        }
   header{
     position: fixed;
     z-index: 1003;
@@ -314,7 +351,12 @@
           height: 100%;
             transition: all .3s ease;
         }
-        .gallery-img .col-lg-6, .gallery-img .col-6{
+        .galery-card{
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+        .gallery-img .col-lg-6, .gallery-img .galery-card{
           position: relative;
         }
         .gallery-img .col-lg-6 span, .gallery-img .col-6 span{
@@ -325,55 +367,64 @@
           padding: 10px ;
 
         }
-        .gallery-img .col-6 span{
-          position: absolute;
-          right: 8px;
-          bottom: 60px;
-          background-color: #ffffff98;
-          padding: 10px ;
-
-        }
+       
          .gallery-img .col-6:first-child,.gallery-img .col-6:nth-child(2){
           margin-bottom: 16px;
+         }
+         .title-sec h3{
+          font-size: 1.2em;
+          margin-bottom: 10px;
          }
 
 
          .title-sec p{
           color: gray;
+          font-size: .9em;
+          font-weight: bold;
          }
           .owl-carousel {
             /* margin-top: 50px; */
         }
-        .gallery-carousel .item {
+        .product-carousel .item {
             padding: 4px;
             border-radius: 8px;
             text-align: center;
             margin: 2px;
             transition: transform 0.3s ease-in-out;
         }
-        .gallery-carousel .item-img{
- background: #c3c1c1;
+        .product-carousel .item-img{
+ background: hsl(0deg 0% 92.16%);
  height: 350px;
+ padding: 30px;
+ margin-bottom: 15px;
         }
-       .gallery-carousel  .item:hover {
+       .product-carousel  .item:hover {
             transform: translateY(-5px);
         }
-        .gallery-carousel .item img {
+        .product-carousel .item img {
             max-width: 100%;
-            height: auto;
+            width: auto !important;
+            height: 100%;
             border-radius: 4px;
-            margin-bottom: 15px;
+            
+            margin: 0 auto;
+            padding: 30px;
+           
         }
-       .gallery-carousel  .item h4 {
-            font-size: 1.2em;
+        
+
+       .product-carousel  .item h4 {
+            font-size: 1em;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-      .gallery-carousel   .item p {
-            font-size: 0.9em;
-            color: #666;
+      .product-carousel   .item p {
+            font-size: 0.8em;
+            color: #343434;
+            font-weight: bold;
         }
-      .gallery-carousel   .owl-nav button {
+      .product-carousel   .owl-nav button {
             background: none !important;
             border: none !important;
             font-size: 3em !important;
@@ -382,20 +433,20 @@
             top: 50%;
             transform: translateY(-50%);
         }
-      .gallery-carousel   .owl-prev {
+      .product-carousel   .owl-prev {
             left: -50px; /* Adjust as needed */
         }
-      .gallery-carousel   .owl-next {
+      .product-carousel   .owl-next {
             right: -50px; /* Adjust as needed */
         }
-      .gallery-carousel   .owl-dots {
+      .product-carousel   .owl-dots {
             text-align: center;
             margin-top: 20px;
         }
-      .gallery-carousel   .owl-dot span {
+      .product-carousel   .owl-dot span {
             background: #ccc !important;
         }
-      .gallery-carousel   .owl-dot.active span {
+      .product-carousel   .owl-dot.active span {
             background: #333 !important;
         }
 
@@ -405,7 +456,7 @@
 
     .baner .item {
         position: relative;
-        height: 100vh; /* Adjust as needed */
+       
         background-size: cover;
         background-position: center;
         display: flex;
@@ -417,10 +468,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
+     
     }
 
  
@@ -437,12 +485,12 @@
     }
 
     .baner .text h2 {
-        font-size: 2em;
-        margin-bottom: 10px;
+        font-size: 1.5em;
+        margin-bottom: 20px;
     }
 
     .baner .text h1 {
-        font-size: 4em;
+        font-size: 2.7em;
         margin-bottom: 20px;
     }
 
@@ -453,6 +501,7 @@
         padding: 15px 30px;
         font-size: 1.2em;
         cursor: pointer;
+        font-weight: bold;
        
         transition: background-color 0.3s ease;
     }
@@ -465,10 +514,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100px; /* Adjust as needed */
-            background-color: #f0f0f0;
+            height: 100px; 
+           
             margin: 5px;
-            border-radius: 5px;
+            padding: 10px;
         }
       .brands  .item img {
             max-width: 100%;
@@ -477,10 +526,272 @@
             width: auto;
         }
         .brands .item img {
-    filter: grayscale(100%); 
+    /* filter: grayscale(100%);  */
     transition: filter 0.3s ease-in-out; 
 }
 
 .brands .item.active img {
-    filter: grayscale(0%);
+    /* filter: grayscale(0%); */
 }
+
+  .why-hero {
+      background: #d81616; /* قرمز اصلی */
+      position: relative;
+      /* overflow: hidden; */
+    }
+    .why-hero .heading-wrap {
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      /* justify-content: flex-end; */
+    }
+    .why-card {
+      background: #fff;
+      border: 0;
+      border-radius: 16px;
+      padding: 40px 24px 32px;
+      text-align: center;
+     box-shadow: rgba(248, 86, 86, 0.3) 0px 19px 38px, rgba(243, 110, 110, 0.22) 0px 15px 12px;
+     
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+   
+    .why-card:hover{
+      transform: translateY(-4px);
+
+    }
+  .why-img{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    .why-title{
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+
+    .cards-row {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      
+    }
+
+    @media (max-width: 575.98px){
+      .why-hero .heading-wrap{
+        min-height: 160px;
+        justify-content: center;
+        text-align: center;
+      }
+      .cards-row{ margin-top: -50px; }
+    }
+
+    
+        .blog-section {
+            padding: 60px 0;
+            
+        }
+  .section-header h2 {
+           font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            /* text-align: left; */
+            margin-bottom: 15px;
+        }
+  .section-subtitle {
+            font-size: 1.3em;
+            color: #302f2f;
+            font-weight: bold;
+            /* text-align: left; */
+        }
+            .nav-btn {
+        
+           background-color: var(--primary-color);
+           
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+           
+            transition: all 0.3s ease;
+        }
+        .blog-section{
+          margin: 150px 0px 50px 0pc;
+        }
+
+        .blog-cards-container {
+            /* display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px;
+            margin-top: 20px; */
+        }
+
+        .blog-card {
+           
+            /* transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
+            position: relative;
+              /* opacity: 0; */
+    transform: translateY(50px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    cursor: pointer;
+          
+        }
+      
+
+        .blog-card:hover {
+            /* transform: translateY(-5px); */
+           
+        }
+
+        .blog-card-img {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+           
+        }
+
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.05);
+        }
+
+        .blog-icon {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+         
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            /* transition: transform 0.3s ease; */
+        }
+
+        .blog-card:hover .blog-icon {
+            /* transform: scale(1.1) rotate(5deg); */
+        }
+
+        .blog-icon i {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .blog-card-content {
+            padding: 20px 0px;
+        }
+      
+
+        .blog-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 60px;
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--primary-color);
+        }
+
+        .blog-date {
+            color: #999;
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            /* justify-content: end; */
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .blog-date i {
+            color: var(--primary-color);
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 1200px) {
+            .blog-cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+           
+
+          .blog-cards-container{
+            display: flex;
+          }
+
+            .section-titles h2 {
+                font-size: 2rem;
+            }
+
+            .blog-cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .blog-card-img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-section {
+                padding: 40px 0;
+            }
+
+            .section-titles h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-titles p {
+                font-size: 1rem;
+            }
+
+            .blog-cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .blog-card-img {
+                height: 180px;
+            }
+
+            .blog-card-content {
+                padding: 20px;
+            }
+
+            .blog-title {
+                font-size: 1.1rem;
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-card-content {
+                padding: 18px;
+            }
+             .footer-list-container{
+        flex-direction: column;
+    }
+  }
