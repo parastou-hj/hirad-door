@@ -17,7 +17,7 @@
               
                 <div class="col-lg-9  col-8  brand-logo">
                      <div class=" bar-menu justify-content-center align-items-center d-lg-none">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
                </div>
                     <div class="brand-img">
                         <img src="./images/logo.png" alt="">
@@ -246,59 +246,77 @@
         </div>
         <!-- mobile-side-menu -->
          
-           <div class="navs mobile-menu d-lg-none">
-            <div class="mobile-side-header p-3 d-flex justify-content-between">
-                <span>منو اصلی</span>
-                <div class="close-btn"><i class="fa fa-times"></i></div>
+         <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-side-header">
+            <span>منو اصلی</span>
+            <div class="close-btn" onclick="closeMenu()">
+                <i class="fa fa-times"></i>
             </div>
-                    <ul class="category">
-                        <li>
-                            <img src="./images/category.png" alt="">
-                            <span class="fw-bold">دسته بندی محصولات</span>
-                              <div class="category-dropdown">
-                                <ul>
-                                    <li><a href="#">درب ایمنی ضد سرقت</a></li>
-                                    <li><a href="#">درب اتاق</a></li>
-                                    <li><a href="#">درب حیاط</a></li>
-                                    <li><a href="#">چهارچوب فلزی</a></li>
-                                    <li><a href="#">قفل و یراق آلات</a></li>
-                                    <li><a href="#">درب ضد آب</a></li>
-                                    <li><a href="#">درب آکوستیک</a></li>
-                                    <li><a href="#">مشاهده همه محصولات</a></li>
-                                </ul>
-                            </div>
-                            
-                        </li>
-                    </ul>
-                    <ul class="nav">
-                        <li>
-                            <a href="">صفحه اصلی</a>
-                        </li>
-                          <li>
-                            <a href="">خدمات</a>
-                        </li>
-                          <li>
-                            <a href="">پروژه ها</a>
-                        </li>
-                          <li>
-                            <a href="">صدای مشتری</a>
-                        </li>
-                          <li class="has-submenu">
-                            <a href="">تماس با ما</a>
-                             <div class="sub-menu">
-                                <ul>
-                                    <li><a href="#">تاریخچه شرکت</a></li>
-                                    <li><a href="#">مدیریت و کارکنان</a></li>
-                                    <li><a href="#">ماموریت و چشم انداز</a></li>
-                                    <li><a href="#">گواهینامه ها</a></li>
-                                    <li><a href="#">افتخارات</a></li>
-                                    <li><a href="#">فرصت های شغلی</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+        </div>
+        
+        <div class="mobile-accordion-item">
+            <input type="checkbox" class="mobile-accordion-checkbox" id="category-toggle">
+            <label for="category-toggle" class="mobile-accordion-label">
+                <div>
+                    <i class="fa fa-th-large category-icon"></i>
+                    <span>دسته بندی محصولات</span>
                 </div>
-                <div class="mobile-overlay"></div>
+            </label>
+            <div class="mobile-accordion-content">
+                <ul>
+                    <li><a href="#"><i class="fa fa-shield-alt"></i> درب ایمنی ضد سرقت</a></li>
+                    <li><a href="#"><i class="fa fa-door-open"></i> درب اتاق</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i> درب حیاط</a></li>
+                    <li><a href="#"><i class="fa fa-border-style"></i> چهارچوب فلزی</a></li>
+                    <li><a href="#"><i class="fa fa-key"></i> قفل و یراق آلات</a></li>
+                    <li><a href="#"><i class="fa fa-tint"></i> درب ضد آب</a></li>
+                    <li><a href="#"><i class="fa fa-volume-mute"></i> درب آکوستیک</a></li>
+                    <li><a href="#"><i class="fa fa-eye"></i> مشاهده همه محصولات</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mobile-nav-item">
+            <a href=""><i class="fa fa-home nav-icon"></i>صفحه اصلی</a>
+        </div>
+        
+        <div class="mobile-nav-item">
+            <a href=""><i class="fa fa-cogs nav-icon"></i>خدمات</a>
+        </div>
+        
+        <div class="mobile-nav-item">
+            <a href=""><i class="fa fa-project-diagram nav-icon"></i>پروژه ها</a>
+        </div>
+        
+        <div class="mobile-nav-item">
+            <a href=""><i class="fa fa-comments nav-icon"></i>صدای مشتری</a>
+        </div>
+        
+        <div class="mobile-accordion-item">
+            <input type="checkbox" class="mobile-accordion-checkbox" id="about-toggle">
+            <label for="about-toggle" class="mobile-accordion-label">
+                <div>
+                    <i class="fa fa-users category-icon"></i>
+                    <span>درباره ما</span>
+                </div>
+            </label>
+            <div class="mobile-accordion-content">
+                <ul>
+                    <li><a href="#"><i class="fa fa-info-circle"></i> تاریخچه شرکت</a></li>
+                    <li><a href="#"><i class="fa fa-user-tie"></i> مدیریت و کارکنان</a></li>
+                    <li><a href="#"><i class="fa fa-eye"></i> ماموریت و چشم انداز</a></li>
+                    <li><a href="#"><i class="fa fa-certificate"></i> گواهینامه ها</a></li>
+                    <li><a href="#"><i class="fa fa-trophy"></i> افتخارات</a></li>
+                    <li><a href="#"><i class="fa fa-briefcase"></i> فرصت های شغلی</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mobile-nav-item">
+            <a href=""><i class="fa fa-phone nav-icon"></i>تماس با ما</a>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
     </header>
     <main>
       <div class="baner-sec">

@@ -212,3 +212,29 @@ document.addEventListener('click', function (e) {
                 behavior: 'smooth'
             });
         }
+          function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        
+        // بستن منو با کلیک خارج از آن
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            
+            if (!menu.contains(e.target)) {
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        });
