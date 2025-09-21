@@ -14,22 +14,23 @@
     <header>
         <div class="container-fluid p-0 header-container">
             <div class="row col-xl-11 header-top py-lg-2 px-lg-2" >
-               <div class=" col-1 bar-menu justify-content-center align-items-center">
-                <i class="fa-solid fa-bars fa-xxl"></i>
-               </div>
+              
                 <div class="col-lg-9  col-8  brand-logo">
+                     <div class=" bar-menu justify-content-center align-items-center d-lg-none">
+                <i class="fa-solid fa-bars"></i>
+               </div>
                     <div class="brand-img">
                         <img src="./images/logo.png" alt="">
                     </div>
-                    <div class="search-input ">
+                    <div class="search-input d-none d-lg-block">
                         <input type="text" placeholder="جستجو برای محصولات ...">
                         <img src="./images/search.png" alt="">
                     </div>
                 </div>
-                <div class="col-lg-3  col-3 user-cart d-flex align-items-center">
+                <div class="col-lg-3  col-4 user-cart d-flex align-items-center">
                     <div class="user">
                         <div class="user-btn">
-                          <a href="#"><span>ورود / ثبت نام</span></a>
+                          <a href="#"><span class="d-none d-lg-block">ورود / ثبت نام</span></a>
                           <img src="./images/user.png" alt="">
                         </div>
                           <div class="user-submenu">
@@ -148,13 +149,33 @@
                     
                 </div>
             </div>
-            <div class=" header-down container-fluid p-0">
+            <div class=" header-down container-fluid p-0 py-2">
                 <div class="row col-xl-11 d-flex">
-                  <div class="col-8 navs d-flex py-2">
+                    <!-- mobile-search -->
+                     <div class="col-md-10 col-8 ">
+                         <div class="search-input d-lg-none">
+                        <input type="text" placeholder="جستجو برای محصولات ...">
+                        <img src="./images/search.png" alt="">
+                    </div>
+                     </div>
+
+                  <div class="col-8 navs d-none d-lg-flex py-2">
                     <ul class="category">
                         <li>
                             <img src="./images/category.png" alt="">
                             <span class="fw-bold">دسته بندی محصولات</span>
+                              <div class="category-dropdown">
+                                <ul>
+                                    <li><a href="#">درب ایمنی ضد سرقت</a></li>
+                                    <li><a href="#">درب اتاق</a></li>
+                                    <li><a href="#">درب حیاط</a></li>
+                                    <li><a href="#">چهارچوب فلزی</a></li>
+                                    <li><a href="#">قفل و یراق آلات</a></li>
+                                    <li><a href="#">درب ضد آب</a></li>
+                                    <li><a href="#">درب آکوستیک</a></li>
+                                    
+                                </ul>
+                            </div>
                             
                         </li>
                     </ul>
@@ -171,15 +192,25 @@
                           <li>
                             <a href="">صدای مشتری</a>
                         </li>
-                          <li>
+                          <li class="has-submenu">
                             <a href="">تماس با ما</a>
+                             <div class="sub-menu">
+                                <ul>
+                                    <li><a href="#">تاریخچه شرکت</a></li>
+                                    <li><a href="#">مدیریت و کارکنان</a></li>
+                                    <li><a href="#">ماموریت و چشم انداز</a></li>
+                                    <li><a href="#">گواهینامه ها</a></li>
+                                    <li><a href="#">افتخارات</a></li>
+                                    <li><a href="#">فرصت های شغلی</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                <div class="col-4 socials d-flex align-items-center justify-content-between ">
-                    <div class="online-order d-flex align-items-center pe-lg-5">
+                <div class="col-lg-4 col-md-2 col-4 socials d-flex align-items-center  ">
+                    <div class="online-order d-none d-lg-flex align-items-center pe-xl-5">
                       <a href="">
-                          <span>سفارش آنلاین درب ضد سرقت</span>
+                          <span class="">سفارش آنلاین درب ضد سرقت</span>
                         <i class="fa fa-chevron-left"></i>
                       </a>
                     </div>
@@ -213,9 +244,69 @@
                 </div>
             </div>
         </div>
+        <!-- mobile-side-menu -->
+         
+           <div class="navs mobile-menu d-lg-none">
+            <div class="mobile-side-header p-3 d-flex justify-content-between">
+                <span>منو اصلی</span>
+                <div class="close-btn"><i class="fa fa-times"></i></div>
+            </div>
+                    <ul class="category">
+                        <li>
+                            <img src="./images/category.png" alt="">
+                            <span class="fw-bold">دسته بندی محصولات</span>
+                              <div class="category-dropdown">
+                                <ul>
+                                    <li><a href="#">درب ایمنی ضد سرقت</a></li>
+                                    <li><a href="#">درب اتاق</a></li>
+                                    <li><a href="#">درب حیاط</a></li>
+                                    <li><a href="#">چهارچوب فلزی</a></li>
+                                    <li><a href="#">قفل و یراق آلات</a></li>
+                                    <li><a href="#">درب ضد آب</a></li>
+                                    <li><a href="#">درب آکوستیک</a></li>
+                                    <li><a href="#">مشاهده همه محصولات</a></li>
+                                </ul>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <ul class="nav">
+                        <li>
+                            <a href="">صفحه اصلی</a>
+                        </li>
+                          <li>
+                            <a href="">خدمات</a>
+                        </li>
+                          <li>
+                            <a href="">پروژه ها</a>
+                        </li>
+                          <li>
+                            <a href="">صدای مشتری</a>
+                        </li>
+                          <li class="has-submenu">
+                            <a href="">تماس با ما</a>
+                             <div class="sub-menu">
+                                <ul>
+                                    <li><a href="#">تاریخچه شرکت</a></li>
+                                    <li><a href="#">مدیریت و کارکنان</a></li>
+                                    <li><a href="#">ماموریت و چشم انداز</a></li>
+                                    <li><a href="#">گواهینامه ها</a></li>
+                                    <li><a href="#">افتخارات</a></li>
+                                    <li><a href="#">فرصت های شغلی</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-overlay"></div>
     </header>
     <main>
-       <div class="owl-carousel owl-theme baner">
+      <div class="baner-sec">
+        <div class="baner-nav">
+            <img src="./images/baner-right.png" alt="" class="baner-right">
+            <img src="./images/baner-left.png" alt="" class="baner-left">
+        </div>
+         <div class="owl-carousel owl-theme baner">
     <div class="item">
         <img src="./images/baner.png" alt="Image 1">
         
@@ -225,86 +316,109 @@
        
     </div>
 </div>
-   <div class="container-fluid px-0 my-lg-5">
-    <div class="title-sec text-center mb-5">
+      </div>
+   <div class="container-fluid px-0 my-lg-5 py-lg-5 my-4">
+    <div class="title-sec text-center mb-lg-5 mb-3">
         <h3>دسته بندی های محبوب</h3>
         <p>جهت مشاهده محصولات، دسته بندی را انتخاب کنید</p>
     </div>
     <div class="row col-xl-9 gallery-img">
-        <div class="col-lg-6 px-0">
-            <img src="./images/gallery-big.png" alt="">
+        <div class="col-lg-6 px-lg-0 py-2 py-lg-0">
+           <a href="">
+             <img src="./images/gallery-big.png" alt="">
             <span>درب ایمنی ضد سرقت</span>
+           </a>
         </div>
-        <div class="col-lg-6 row">
+        <div class="col-lg-6 row px-0 pe-2 pe-lg-0">
             <div class="col-6 ">
                 <div class="galery-card mx-2">
-                    <img src="./images/galery1.png" alt="">
+                    <a href="">
+                        <img src="./images/galery1.png" alt="">
                       <span>درب ایمنی ضد سرقت</span>
+                    </a>
                 </div>
             </div>
              <div class="col-6">
                 <div class="galery-card mx-2">
-                    <img src="./images/galery2.png" alt="">
+                   <a href="">
+                     <img src="./images/galery2.png" alt="">
                       <span>درب ایمنی ضد سرقت</span>
+                   </a>
                 </div>
             </div>
              <div class="col-6 ">
                <div class="galery-card mx-2">
-                    <img src="./images/galery3.png" alt="">
+                   <a href="">
+                     <img src="./images/galery3.png" alt="">
                       <span>درب ایمنی ضد سرقت</span>
+                   </a>
                 </div>
             </div>
              <div class="col-6 ">
                 <div class="galery-card mx-2">
-                    <img src="./images/galery4.png" alt="">
+                  <a href="">
+                      <img src="./images/galery4.png" alt="">
                       <span>درب ایمنی ضد سرقت</span>
+                  </a>
                 </div>
             </div>
         </div>
     </div>
    </div>
-   <div class="container-fluid px-0 my-lg-5">
-     <div class="title-sec text-center mb-5">
+   <div class="container-fluid px-0 my-lg-5  position-relative">
+     <div class="title-sec text-center mb-lg-5 mb-4">
         <h3>دسته بندی های محبوب</h3>
         <p>جهت مشاهده محصولات، دسته بندی را انتخاب کنید</p>
+    </div>
+    <div class="pro-navs">
+        <img src="./images/pro-right.png" alt="" class="pro-right">
+        <img src="./images/pro-left.png" alt="" class="pro-left">
     </div>
     <div class="row col-xl-9 ">
          <div class="owl-carousel owl-theme product-carousel">
         <div class="item">
-            <div class="item-img mb-3">
+           <a href="">
+             <div class="item-img mb-3">
                 <img src="./images/p1.png" alt="درب اتاق TW75" >
                 
             </div>
             
             <h4>درب اتاق TW75</h4>
             <p>کد : TW75</p>
+           </a>
         </div>
         <div class="item">
-            <div class="item-img mb-3">
+           <a href="">
+             <div class="item-img mb-3">
                 <img src="./images/p2.png" alt="درب اتاق TW75">
             </div>
             <h4>درب اتاق TW75</h4>
             <p>کد : TW75</p>
+           </a>
         </div>
         <div class="item">
-            <div class="item-img mb-3">
+           <a href="">
+             <div class="item-img mb-3">
                 <img src="./images/p3.png" alt="درب اتاق TW75">
             </div>
             <h4>درب ضد آب TW2</h4>
             <p>کد : TW75</p>
+           </a>
         </div>
         <div class="item">
-            <div class="item-img mb-3">
+            <a href="">
+                <div class="item-img mb-3">
                 <img src="./images/p4.png" alt="درب اتاق TW75">
             </div>
             <h4>درب حیاط یک و نیم لنگه طرح</h4>
             <p>لارسا 15116</p>
+            </a>
         </div>
        
     </div>
     </div>
    </div>
-   <div class="owl-carousel owl-theme baner">
+   <div class="owl-carousel owl-theme baner my-4 my-lg-0">
     <div class="item">
         <img src="./images/baner2.png" alt="Image 1">
         <div class="overlay">
@@ -352,10 +466,14 @@
     </div>
     </div>
 </div>
- <div class="container-fluid px-0 my-lg-5 pt-3">
+ <div class="container-fluid px-0 my-lg-5 pt-3 position-relative pt-3">
      <div class="title-sec text-center mb-5">
         <h3>جدیدترین ها</h3>
         <p>برای هر خانه، هر معماری، هر سلیقه و بودجه ای دربی داریم</p>
+    </div>
+      <div class="pro-navs">
+        <img src="./images/pro-right.png" alt="" class="pro-right">
+        <img src="./images/pro-left.png" alt="" class="pro-left">
     </div>
     <div class="row col-xl-9 ">
          <div class="owl-carousel owl-theme product-carousel">
@@ -405,9 +523,9 @@
           </div>
         </div>
       <div class="col-lg-10 col-12 position-relative">
-         <div class="row g-4 cards-row px-3">
+         <div class="row g-4 cards-row px-lg-3">
             
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class=" col-3 px-1 px-lg-auto">
           <div class="position-relative why-card h-100">
              <div class="why-img mb-2">
             <img src="./images/s1.png" alt="">
@@ -415,7 +533,7 @@
             <div class="why-title">مشاوره</div>
           </div>
         </div>
-         <div class="col-12 col-sm-6 col-lg-3">
+         <div class=" col-3 px-1 px-lg-auto">
           <div class="position-relative why-card h-100">
              <div class="why-img mb-2">
             <img src="./images/s2.png" alt="">
@@ -423,7 +541,7 @@
             <div class="why-title">ارسال برای مشتریان</div>
           </div>
         </div>
-         <div class="col-12 col-sm-6 col-lg-3">
+         <div class="col-3 px-1 px-lg-auto">
           <div class="position-relative why-card h-100">
            <div class="why-img mb-2">
             <img src="./images/s3.png" alt="">
@@ -432,7 +550,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-3 px-1 px-lg-auto">
           <div class="position-relative why-card h-100">
            <div class="why-img mb-2">
             <img src="./images/s4.png" alt="">
@@ -544,7 +662,7 @@
             </div>
             <div class="social-section">
                 <h5>همراه ما باشید!</h5>
-                <div class="social-links me-5">
+                <div class="social-links me-lg-5 mt-3 mt-lg-0">
                     <a href="#" title=""><img src="./images/bale.png" alt=""></a>
                     <a href="#" title=""><img src="./images/eita.png" alt=""></a>
                     <a href="#" title=""><img src="./images/x.png" alt=""></a>

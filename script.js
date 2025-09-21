@@ -1,4 +1,33 @@
-  
+ const barMenu = document.querySelector('.bar-menu i');
+const navs = document.querySelector('.mobile-menu');
+const closeNav = document.querySelector('.close-btn');
+
+barMenu.addEventListener('click', function (e) {
+  e.stopPropagation(); 
+  navs.classList.toggle('active');
+  document.querySelector('.mobile-overlay').style.display = 'block';
+});
+closeNav.addEventListener('click', function (e) {
+    navs.classList.remove('active');
+    document.querySelector('.mobile-overlay').style.display = 'none';
+});
+
+
+document.addEventListener('click', function (e) {
+  if (!navs.contains(e.target) && !barMenu.contains(e.target)) {
+    navs.classList.remove('active');
+    document.querySelector('.mobile-overlay').style.display = 'none';
+
+  }
+});
+
+document.addEventListener('click', function (e) {
+  if (!navs.contains(e.target) && !barMenu.contains(e.target)) {
+    navs.classList.remove('active');
+    document.querySelector('.mobile-overlay').style.display = 'none';
+
+  }
+});
  $(document).ready(function() {
     const headerMoving=()=>{
      let lastScrollTop = 0;
@@ -74,10 +103,10 @@
                 loop: true,
                
                 rtl: true,
-                nav: true,
+               
                 dots: true,
-                // autoplay: true,
-                // autoplayTimeout: 3000,
+                autoplay: true,
+                autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 responsive:{
                     0:{
@@ -90,10 +119,14 @@
                         items:4 
                     }
                 },
-                navText: [
-                    '<i class="arrow right">&#8592;</i>', 
-                    '<i class="arrow left">&#8594;</i>'
-                ]
+               
+            });
+             $('.pro-right').click(function() {
+                $('.product-carousel').trigger('prev.owl.carousel');
+            });
+            
+            $('.pro-left').click(function() {
+                 $('.product-carousel').trigger('next.owl.carousel');
             });
         });
          $(document).ready(function(){
@@ -107,6 +140,13 @@
             nav: false,
             dots: false
         });
+          $('.baner-right').click(function() {
+                $('.baner').trigger('prev.owl.carousel');
+            });
+            
+            $('.baner-left').click(function() {
+                 $('.baner').trigger('next.owl.carousel');
+            });
     });
 
       $(document).ready(function(){
@@ -114,14 +154,14 @@
                 rtl:true,
                 loop: true,
                 margin: 10,
-                nav: true,
+                // nav: true,
                 dots: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 responsive:{
                     0:{
-                        items:1
+                        items:3
                     },
                     600:{
                         items:3
@@ -144,14 +184,15 @@
                 rtl:true,
                 loop: true,
                 // margin: 10,
-                nav: true,
+               
                 dots: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 responsive:{
                     0:{
-                        items:1
+                        items:1,
+                        dots:true
                     },
                     600:{
                         items:3
